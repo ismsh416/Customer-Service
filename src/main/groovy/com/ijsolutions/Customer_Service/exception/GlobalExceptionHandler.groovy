@@ -16,8 +16,8 @@ class GlobalExceptionHandler {
                 timestamp: new Date(),
                 status   : HttpStatus.NOT_FOUND.value(),
                 error    : ex.message,
-                message  : ex.message, // Include the exception's message
-                path     : request.requestURI // Dynamically fetch the request URI
+                message  : ex.message,
+                path     : request.requestURI
         ]
         return new ResponseEntity<>(errorBody, HttpStatus.NOT_FOUND)
     }
@@ -28,8 +28,8 @@ class GlobalExceptionHandler {
                 timestamp: new Date(),
                 status   : HttpStatus.BAD_REQUEST.value(),
                 error    : "Bad Request",
-                message  : ex.message, // Include the generic exception's message
-                path     : request.requestURI // Dynamically fetch the request URI
+                message  : ex.message,
+                path     : request.requestURI
         ]
         return new ResponseEntity<>(errorBody, HttpStatus.BAD_REQUEST)
     }

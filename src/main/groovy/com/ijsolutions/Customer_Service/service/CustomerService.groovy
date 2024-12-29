@@ -41,7 +41,8 @@ class CustomerService {
     }
 
     private Customer findById(Long customerId) {
-        customerRepository.findById(customerId).orElseThrow(() -> new NotFoundException('customerId ' + customerId + 'not found'))
+        customerRepository.findById(customerId)
+                .orElseThrow(() -> new NotFoundException('customerId ' + customerId + ' not found'))
     }
 
     private Customer convertToDomain(CustomerRequest customerRequest){
