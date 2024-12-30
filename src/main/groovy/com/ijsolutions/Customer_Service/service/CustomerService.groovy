@@ -24,6 +24,7 @@ class CustomerService {
     }
 
     CustomerResponse getByCustomerId(Long customerId) {
+        log.info 'getByCustomerId'
         convertToModel(findById(customerId))
     }
 
